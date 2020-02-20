@@ -10,7 +10,7 @@
 
 #define CONF 0.7
 #define NMS 0.4
-#define DNNSIZE 224
+#define DNNSIZE 128
 
 class YOLO {
 public:
