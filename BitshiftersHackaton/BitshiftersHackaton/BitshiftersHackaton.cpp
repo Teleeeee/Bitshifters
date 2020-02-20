@@ -4,6 +4,7 @@
 
 #include <opencv2/opencv.hpp>
 
+#include "FileLogger.h"
 #include "BitshiftersHackaton.h"
 #include "YOLO.h"
 
