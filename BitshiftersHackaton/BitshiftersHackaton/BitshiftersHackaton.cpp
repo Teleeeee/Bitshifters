@@ -4,7 +4,6 @@
 
 #include <opencv2/opencv.hpp>
 
-#include "FileLogger.h"
 #include "BitshiftersHackaton.h"
 #include "YOLO.h"
 
@@ -25,7 +24,7 @@ int main()
         //cv::imshow("YOLO", out);
 
         char c = (char)cv::waitKey(25);
-        if (c == 27) break;
+        if (c == 27 || c == 30) break;
     }
 
     cam.release();

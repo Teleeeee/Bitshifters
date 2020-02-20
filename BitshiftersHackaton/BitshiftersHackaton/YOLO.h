@@ -8,6 +8,8 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 
+#include "FileLogger.h"
+
 #define CONF 0.4
 #define NMS 0.5
 #define DNNSIZE 320
@@ -15,6 +17,7 @@
 class YOLO {
 public:
     YOLO();
+    ~YOLO();
     void execute(cv::InputArray input, cv::OutputArray output);
 
 private:

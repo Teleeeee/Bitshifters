@@ -12,7 +12,7 @@ class FileLogger {
 public:
     FileLogger();
     ~FileLogger();
-    void logToTxtFile(std::vector<std::string> logAbleData);
+    void logToTxtFile(const std::vector<std::string>& logAbleData);
 
 private:
     std::ofstream file;

@@ -1,18 +1,20 @@
 #include "FileLogger.h"
 
-FileLogger::FileLogger() {
+FileLogger::FileLogger()
+{
     if (!file.is_open()) {
         file.open(LOGBOOK, std::ios::out | std::ios_base::app);
     }
 }
 
-FileLogger::~FileLogger() {
+FileLogger::~FileLogger()
+{
     file.close();
 }
 
-void FileLogger::logToTxtFile(std::vector<std::string> logAbleData) {
-    
-    std::time_t t = std::time(0);   // get time now
+void FileLogger::logToTxtFile(const std::vector<std::string>& logAbleData)
+{
+    std::time_t t = std::time(nullptr);   // get time now
     std::tm* now = std::localtime(&t);
 
     file << (now->tm_year + 1900)
@@ -28,8 +30,8 @@ void FileLogger::logToTxtFile(std::vector<std::string> logAbleData) {
          << now->tm_sec
          << ',';
 
-    for (auto logedValue : logAbleData) {
-        file << logedValue << ",";
+    for (const auto& loggedValue : logAbleData) {
+        file << loggedValue << ",";
     }
     file << "\n";
 }
