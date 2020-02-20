@@ -1,0 +1,179 @@
+body{
+    background: rgb(30,168,170);
+    background: linear-gradient(180deg, rgba(30,168,170,1) 0%, rgba(253,187,45,1) 100%);
+    width: 100%;
+    height: 100vh; 
+}
+
+#page-title{
+    color: #334d5c;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    font-weight: normal;
+    width: 100%;
+    height: 70px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin: 0, 20px;
+}
+
+#nav_bar{
+    width: 100%;
+    position: absolute;
+    right: 2.5%;
+    top: 120px;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+#team_text{
+    position: relative;
+    top: 90px;
+    left: -69px;
+    font-weight: lighter;
+    font-family: 'M PLUS Rounded 1c', sans-serif;  
+    width: 80px;
+    height: 24px;
+}
+
+#about_text{
+    position: relative;
+    top: 90px;
+    left: -57px;
+    font-weight: lighter;
+    font-family: 'M PLUS Rounded 1c', sans-serif;  
+    width: 80px;
+    height: 24px;
+}
+
+#stat_text{
+    position: relative;
+    top: 90px;
+    left: -72px;
+    font-weight: lighter;
+    font-family: 'M PLUS Rounded 1c', sans-serif;  
+    width: 80px;
+    height: 24px;
+}
+
+
+
+#stats, #team, #info, a {
+    position: relative;
+    background-color: transparent;
+    transition: transform .2s; /* Animation */
+    width: 70px;
+    height: 70px;
+    margin: 0 0 0 10%;
+  }
+  
+#stats:hover,#team:hover, #info:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+#stats:active,#team:active, #info:active {
+    transform: scale(1.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#balint, #csaba, #robi, #levi{
+  width: auto;
+  height: 300px;
+}
+
+#stat_div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 200px;
+    width: 100%;
+    height: 500px;
+}
+#about_div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 200px;
+    width: 100%;
+    height: 500px;
+}
+#team_div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 200px;
+    width: 100%;
+}
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(30,168,170);
+    background: linear-gradient(0deg, rgba(30,168,170,1) 0%, rgba(253,187,45,1) 100%); 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;  
+    animation: loader 2s infinite ease;
+  }
+  
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+  
+  @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    25% {
+      transform: rotate(180deg);
+    }
+    
+    50% {
+      transform: rotate(180deg);
+    }
+    
+    75% {
+      transform: rotate(360deg);
+    }
+    
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes loader-inner {
+    0% {
+      height: 0%;
+    }
+    
+    25% {
+      height: 0%;
+    }
+    
+    50% {
+      height: 100%;
+    }
+    
+    75% {
+      height: 100%;
+    }
+    
+    100% {
+      height: 0%;
+    }
+  }
