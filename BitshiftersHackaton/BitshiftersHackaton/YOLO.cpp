@@ -23,6 +23,11 @@ void YOLO::execute(cv::InputArray input, cv::OutputArray output)
     float NMSThreshold = NMS;
 
     output.assign(generateYOLOResultImage(input.getMat(), confidenceThreshold, NMSThreshold, DNNSIZE));
+
+    std::vector<double> layersTimes;
+    double freq = cv::getTickFrequency() / 1000;
+    double t = _net.getPerfProfile(layersTimes) / freq;
+    std::cout << "Interference time for a frame: " << t << "ms" << std::endl;
 }
 
 cv::Mat YOLO::generateYOLOResultImage(const cv::Mat& inputFrame, float conf, float nms, int size)
@@ -57,8 +62,9 @@ std::vector<std::string> YOLO::getOutputsNames(const cv::dnn::Net& net)
 
         // Get the names of the output layers in names
         names.resize(outLayers.size());
-        for (size_t i = 0; i < outLayers.size(); ++i)
+        for (size_t i = 0; i < outLayers.size(); ++i) {
             names[i] = layersNames[outLayers[i] - 1];
+        }
     }
     return names;
 }
@@ -101,13 +107,15 @@ void YOLO::postProcess(cv::Mat& frame, const std::vector<cv::Mat>& outs, const f
 
     // Perform non maximum suppression to eliminate redundant overlapping boxes with
     // lower confidences
+    // the elements in indices are the remaining classified
     std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, NMSThreshold, indices);
     for (int idx : indices)
     {
-        cv::Rect box = boxes[idx];
-        drawPred(classIds[idx], confidences[idx], box.x, box.y,
-                 box.x + box.width, box.y + box.height, frame);
+        // cv::Rect box = boxes[idx];
+        // drawPred(classIds[idx], confidences[idx], box.x, box.y, box.x + box.width, box.y + box.height, frame);
+
+        std::cout << idx << " : " << classIds[idx] << " : " << _classes[classIds[idx]] << " : " << confidences[idx] << std::endl;
     }
 }
 
