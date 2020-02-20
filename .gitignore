@@ -1,5 +1,6 @@
 # Models stuff for YOLO:
 yolov3.weights
+yolov3-tiny.weights
 
 # Created by https://www.gitignore.io/api/qt,cmake,opencv,clion+all,visualstudio
 # Edit at https://www.gitignore.io/?templates=qt,cmake,opencv,clion+all,visualstudio
