@@ -8,8 +8,8 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 
-#define CONF 0.6
-#define NMS 0.4
+#define CONF 0.4
+#define NMS 0.3
 #define DNNSIZE 224
 
 class YOLO {

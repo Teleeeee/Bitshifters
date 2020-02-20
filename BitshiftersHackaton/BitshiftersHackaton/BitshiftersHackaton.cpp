@@ -21,7 +21,7 @@ int main()
 
         yolo.execute(frame, out);
 
-        //cv::imshow("YOLO", out);
+        cv::imshow("YOLO", out);
 
         char c = (char)cv::waitKey(25);
         if (c == 27) break;

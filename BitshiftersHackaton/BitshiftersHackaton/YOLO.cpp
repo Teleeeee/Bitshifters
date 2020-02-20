@@ -114,8 +114,8 @@ void YOLO::postProcess(cv::Mat& frame, const std::vector<cv::Mat>& outs, const f
     cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, NMSThreshold, indices);
     for (int idx : indices)
     {
-        // cv::Rect box = boxes[idx];
-        // drawPred(classIds[idx], confidences[idx], box.x, box.y, box.x + box.width, box.y + box.height, frame);
+        cv::Rect box = boxes[idx];
+        drawPred(classIds[idx], confidences[idx], box.x, box.y, box.x + box.width, box.y + box.height, frame);
 
         std::cout << idx << " : " << classIds[idx] << " : " << _classes[classIds[idx]] << " : " << confidences[idx] << std::endl;
     }
