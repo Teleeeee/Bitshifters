@@ -20,7 +20,13 @@ void FileLogger::logToTxtFile(std::vector<std::string> logAbleData) {
          << (now->tm_mon + 1)
          << '-'
          << now->tm_mday
-         << ",";
+         << ","
+         << now->tm_hour
+         << ':'
+         << now->tm_min
+         << ':'
+         << now->tm_sec
+         << ',';
 
     for (auto logedValue : logAbleData) {
         file << logedValue << ",";

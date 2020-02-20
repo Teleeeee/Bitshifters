@@ -7,10 +7,7 @@ using namespace std;
 
 int main()
 {
-	FileLogger logger;
-	std::vector<std::string> log = { "lol", "aha", "kaka" };
-	for (int i = 0; i < 100; i++) {
-		logger.logToTxtFile(log);
-	}
-	return 0;
+    FileLogger logger;
+    std::vector<std::string> logit = {"ez", "az", "amaz", "ezis"};
+    logger.logToTxtFile(logit);
 }
