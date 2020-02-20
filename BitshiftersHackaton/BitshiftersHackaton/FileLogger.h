@@ -6,7 +6,7 @@
 #include <memory>
 #include <ctime>
 
-#define LOGBOOK "logger.txt"
+#define LOGBOOK "logs.txt"
 
 class FileLogger {
 public:
