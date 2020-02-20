@@ -28,30 +28,33 @@ body{
 }
 
 #team_text{
+  color: #334d5c;
     position: relative;
     top: 90px;
-    left: -69px;
-    font-weight: lighter;
+    left: -64px;
+    font-weight: bold;
     font-family: 'M PLUS Rounded 1c', sans-serif;  
     width: 80px;
     height: 24px;
 }
 
 #about_text{
+  color: #334d5c;
     position: relative;
     top: 90px;
-    left: -57px;
-    font-weight: lighter;
+    left: -51px;
+    font-weight: bold;
     font-family: 'M PLUS Rounded 1c', sans-serif;  
     width: 80px;
     height: 24px;
 }
 
 #stat_text{
+  color: #334d5c;
     position: relative;
     top: 90px;
-    left: -72px;
-    font-weight: lighter;
+    left: -69px;
+    font-weight: bold;
     font-family: 'M PLUS Rounded 1c', sans-serif;  
     width: 80px;
     height: 24px;
@@ -76,6 +79,7 @@ body{
 }
 
 #balint, #csaba, #robi, #levi{
+  margin: 0 3%;
   width: auto;
   height: 300px;
 }
