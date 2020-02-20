@@ -41,6 +41,8 @@ int main()
     cam.release();
     cv::destroyAllWindows();
 
+    std::cout << "Successful run!" << std::endl;
+
     return 0;
 }
 
