@@ -9,8 +9,8 @@
 #include <opencv2/highgui.hpp>
 
 #define CONF 0.4
-#define NMS 0.3
-#define DNNSIZE 224
+#define NMS 0.5
+#define DNNSIZE 320
 
 class YOLO {
 public:
