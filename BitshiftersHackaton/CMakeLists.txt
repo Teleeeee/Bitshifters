@@ -7,3 +7,6 @@ project ("BitshiftersHackaton")
 
 # Include sub-projects.
 add_subdirectory ("BitshiftersHackaton")
+
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
