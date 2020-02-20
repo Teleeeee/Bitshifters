@@ -42,13 +42,12 @@ cv::Mat YOLO::generateYOLOResultImage(const cv::Mat& inputFrame, float conf, flo
     std::vector<cv::Mat> outs;
     _net.forward(outs, getOutputsNames(_net));
 
-    // This following part is only for visualization, so if not needed, we can comment it out
-    // todo : handle this from an outside flag.
     postProcess(const_cast<cv::Mat &>(inputFrame), outs, conf, nms);
 
-    cv::Mat detectedFrame;
-    inputFrame.convertTo(detectedFrame, CV_8U);
-    return detectedFrame;
+    //cv::Mat detectedFrame;
+    //inputFrame.convertTo(detectedFrame, CV_8U);
+    //return detectedFrame;
+    return inputFrame;
 }
 
 std::vector<std::string> YOLO::getOutputsNames(const cv::dnn::Net& net)
@@ -114,8 +113,8 @@ void YOLO::postProcess(cv::Mat& frame, const std::vector<cv::Mat>& outs, const f
     cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, NMSThreshold, indices);
     for (int idx : indices)
     {
-        cv::Rect box = boxes[idx];
-        drawPred(classIds[idx], confidences[idx], box.x, box.y, box.x + box.width, box.y + box.height, frame);
+        //cv::Rect box = boxes[idx];
+        //drawPred(classIds[idx], confidences[idx], box.x, box.y, box.x + box.width, box.y + box.height, frame);
 
         std::cout << idx << " : " << classIds[idx] << " : " << _classes[classIds[idx]] << " : " << confidences[idx] << std::endl;
     }
