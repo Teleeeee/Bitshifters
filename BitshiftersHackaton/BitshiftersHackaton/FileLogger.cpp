@@ -2,7 +2,7 @@
 
 FileLogger::FileLogger() {
     if (!file.is_open()) {
-        file.open(LOGBOOK);
+        file.open(LOGBOOK, std::ios::out | std::ios_base::app);
     }
 }
 
