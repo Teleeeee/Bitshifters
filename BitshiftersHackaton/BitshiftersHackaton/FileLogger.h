@@ -6,7 +6,7 @@
 #include <memory>
 #include <ctime>
 
-#define LOGBOOK "../../../PythonSQL/logs.txt"
+#define LOGBOOK "logs.txt"
 
 class FileLogger {
 public:
