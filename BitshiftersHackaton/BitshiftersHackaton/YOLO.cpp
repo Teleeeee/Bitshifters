@@ -19,6 +19,8 @@ YOLO::YOLO()
     _net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
 }
 
+YOLO::~YOLO() {}
+
 void YOLO::execute(cv::InputArray input, cv::OutputArray output)
 {
     float confidenceThreshold = CONF;
@@ -76,6 +78,7 @@ void YOLO::postProcess(cv::Mat& frame, const std::vector<cv::Mat>& outs, const f
     std::vector<int> classIds;
     std::vector<float> confidences;
     std::vector<cv::Rect> boxes;
+    std::vector<std::string> recognizedObjects;
 
     for (const auto & out : outs)
     {
@@ -116,8 +119,15 @@ void YOLO::postProcess(cv::Mat& frame, const std::vector<cv::Mat>& outs, const f
         //cv::Rect box = boxes[idx];
         //drawPred(classIds[idx], confidences[idx], box.x, box.y, box.x + box.width, box.y + box.height, frame);
 
+        recognizedObjects.push_back(_classes[classIds[idx]]);
         std::cout << idx << " : " << classIds[idx] << " : " << _classes[classIds[idx]] << " : " << confidences[idx] << std::endl;
     }
+
+    if (!recognizedObjects.empty()) {
+        FileLogger logger;
+        logger.logToTxtFile(recognizedObjects);
+    }
+
 }
 
 // Draw the predicted bounding box
@@ -140,4 +150,5 @@ void YOLO::drawPred(int classId, float conf, int left, int top, int right, int b
     top = cv::max(top, labelSize.height);
     cv::rectangle(frame, cv::Point(left, top - round(1.5 * labelSize.height)), cv::Point(left + round(1.5 * labelSize.width), top + baseLine), cv::Scalar(255, 255, 255), cv::FILLED);
     cv::putText(frame, label, cv::Point(left, top), cv::FONT_HERSHEY_SIMPLEX, 0.75, cv::Scalar(0,0,0),1);
+
 }

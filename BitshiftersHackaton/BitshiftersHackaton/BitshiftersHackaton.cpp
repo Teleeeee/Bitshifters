@@ -25,7 +25,7 @@ int main()
         //cv::imshow("YOLO", out);
 
         char c = (char)cv::waitKey(25);
-        if (c == 27) break;
+        if (c == 27 || c == 30) break;
     }
 
     cam.release();
