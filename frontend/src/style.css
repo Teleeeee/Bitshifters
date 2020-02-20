@@ -1,16 +1,20 @@
 body{
+  overflow: visible;
+    margin: 0;
     background: rgb(30,168,170);
     background: linear-gradient(180deg, rgba(30,168,170,1) 0%, rgba(253,187,45,1) 100%);
-    width: 100%;
+    width: 98%;
     height: 100vh; 
-}
+    height: 1000px; 
+  }
 
 #page-title{
     color: #334d5c;
     position: relative;
+    left: -7x;
     text-align: center;
     font-size: 50px;
-    font-weight: normal;
+    font-weight: bold;
     width: 100%;
     height: 70px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -30,19 +34,19 @@ body{
 #team_text{
   color: #334d5c;
     position: relative;
-    top: 90px;
-    left: -64px;
+    top: 65px;
+    left: -78px;
     font-weight: bold;
     font-family: 'M PLUS Rounded 1c', sans-serif;  
-    width: 80px;
+    width: 120px;
     height: 24px;
 }
 
 #about_text{
   color: #334d5c;
     position: relative;
-    top: 90px;
-    left: -51px;
+    top: 65px;
+    left: -63px;
     font-weight: bold;
     font-family: 'M PLUS Rounded 1c', sans-serif;  
     width: 80px;
@@ -52,8 +56,8 @@ body{
 #stat_text{
   color: #334d5c;
     position: relative;
-    top: 90px;
-    left: -69px;
+    top: 65px;
+    left: -81px;
     font-weight: bold;
     font-family: 'M PLUS Rounded 1c', sans-serif;  
     width: 80px;
@@ -78,29 +82,120 @@ body{
     transform: scale(1.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
+
+
+#balint_div, #csaba_div, #robi_div, #levi_div{
+  margin: 0 3%;
+  width: auto;
+  height: 300px;
+}
+
 #balint, #csaba, #robi, #levi{
   margin: 0 3%;
   width: auto;
   height: 300px;
 }
 
-#stat_div{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    top: 200px;
-    width: 100%;
-    height: 500px;
+a{
+  position: relative;
+  text-decoration: none;
 }
-#about_div{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    top: 200px;
-    width: 100%;
-    height: 500px;
+
+#linkedin_link{
+  position: relative;
 }
-#team_div{
+
+#linkedin_logo{
+  position: absolute;
+  top: 33px;
+  left: 3px;
+  width: 30px;
+  height: auto;
+  margin: 0 auto;
+}
+
+#robi_name{
+  position: relative;
+  padding-left: 30px;
+}
+
+#levi_name{
+  position: relative;
+  left: -1px;
+}
+
+#csaba_name{
+  position: relative;
+  left: -15px;
+}
+
+#balint_name{
+  position: relative;
+  left: -8px;
+}
+
+#csaba_linkedin_logo{
+  position: absolute;
+  top: 33px;
+  left: 3px;
+  width: 30px;
+  height: auto;
+  margin: 0 auto;
+}
+
+#levi_linkedin_logo{
+  position: absolute;
+  top: 33px;
+  left: 3px;
+  width: 30px;
+  height: auto;
+  margin: 0 auto;
+}
+
+#github_link{
+  position: relative;
+
+}
+
+#github_logo{
+  position: relative;
+  width: 40px;
+  height: auto;
+}
+
+#csaba_div, #robi_div, #levi_div, #balint_div{
+  width:20%
+}
+
+#github_csaba, #github_robi, #github_levi, #github_balint{
+  font-family: 'M PLUS Rounded 1c', sans-serif; 
+  color: #334d5c; 
+  position: relative;
+  font-weight: bold;
+  width: auto;
+  top: -15px;
+  left: 10px;
+  text-align: center;
+}
+
+h3{
+  font-family: 'M PLUS Rounded 1c', sans-serif; 
+  color: #334d5c; 
+  position: relative; 
+  width: auto;
+  text-align: center;
+}
+
+.team_desc{
+  font-family: 'M PLUS Rounded 1c', sans-serif; 
+  font-size: 17px; 
+  color: #334d5c;
+  position: relative;
+  left: 40px;
+  text-align: left;
+}
+
+#stat_div, #about_div, #team_div{
     position: relative;
     display: flex;
     justify-content: center;
@@ -108,9 +203,10 @@ body{
     width: 100%;
 }
 
+
 .loader-wrapper {
     width: 100%;
-    height: 100%;
+    height: 1000px;
     position: absolute;
     top: 0;
     left: 0;
@@ -120,7 +216,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-
 .loader {
     display: inline-block;
     width: 30px;
