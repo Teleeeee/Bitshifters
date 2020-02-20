@@ -7,8 +7,10 @@ YOLO::YOLO()
     std::string line;
     while (getline(ifs, line)) _classes.push_back(line);
 
-    _modelConfiguration = _MODELS_FOLDER_PATH "yolov3.cfg";
-    _modelWeights = _MODELS_FOLDER_PATH "yolov3.weights";
+    //_modelConfiguration = _MODELS_FOLDER_PATH "yolov3.cfg";
+    //_modelWeights = _MODELS_FOLDER_PATH "yolov3.weights";
+    _modelConfiguration = _MODELS_FOLDER_PATH "yolov3-tiny.cfg";
+    _modelWeights = _MODELS_FOLDER_PATH "yolov3-tiny.weights";
 
     _net = cv::dnn::readNetFromDarknet(_modelConfiguration, _modelWeights);
 
