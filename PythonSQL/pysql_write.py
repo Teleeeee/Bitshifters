@@ -5,7 +5,7 @@ import os
 import txt_parser
 
 load_dotenv()
-logs = txt_parser.readLog("random.txt")
+logs = txt_parser.readLog("logs.txt")
 try:
     connection = mysql.connector.connect(host=os.environ.get('RDS_HOST'),
                                          database=os.environ.get('RDS_DATABASE'),
@@ -28,6 +28,8 @@ try:
         connection.commit()
         print(cursor.rowcount, "Record inserted successfully into logs.")
         cursor.close()
+    
+    os.remove("logs.txt")
 
 except Error as e:
     print("Error while connecting to MySQL", e)
