@@ -10,9 +10,9 @@
 
 #include "FileLogger.h"
 
-#define CONF 0.5
-#define NMS 0.4
-#define DNNSIZE 288
+#define CONF 0.4
+#define NMS 0.2
+#define DNNSIZE 160
 
 class YOLO {
 public:
