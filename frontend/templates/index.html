@@ -45,38 +45,36 @@
 
 
       <script>
-          function getData(){
-            return Math.random();
-          }
-
-          Plotly.plot('chart',[{
-            y:[getData()],
-            type:'line'
+        var cnt = 0;
+        async function fetchOHLC() {
+      let response = await ( await fetch("http://localhost:5000/service"));
+      let data = await response.json();
+      return data;
+    }
+    let datafetched = fetchOHLC();
+    Plotly.plot('chart',[{
+          y:[0],
+          type:'line'
           }]);
-
-          var cnt = 0;
-          
-          setInterval(function(){
-            Plotly.extendTraces('chart', {y:[[getData()]]},[0]);
+    setInterval(
+      async function () {
+      let fetchData = await fetchOHLC();
+      Plotly.extendTraces('chart',{y:[[parseInt(fetchData.peopleCount, 10)]]}, [0]);
+      console.log([[parseInt(fetchData.peopleCount , 10)]], [0]);
             cnt++;
-
             if(cnt > 10){
-              Plotly.relayout('chart', {
+            Plotly.relayout('chart', {
                 xaxis: {
-                  range: [cnt-10, cnt]
-                }
-              })
-            }
-          },
-          1000)
-
-          $(window).on("load",function(){
-
+                range: [cnt-10, cnt]
+              }
+            })
+          }
+        },
+        1000)
+            $(window).on("load",function(){
             $(".loader-wrapper").fadeOut("slow");
-
-          });
-
-      </script>
+    });
+    </script>
 
     </body>
 </html>

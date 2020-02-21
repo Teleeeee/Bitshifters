@@ -20,7 +20,7 @@ def index_page():
 def about_page():
 	return render_template('about.html')
 
-@app.route('/service')
+@app.route('/service/')
 def service():
 	testData = pysql_query.queryDB()
 	return {
